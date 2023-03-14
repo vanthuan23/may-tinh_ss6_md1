@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>may tinh</title>
+    <style>
+        table {
+            border: 5px solid black;
+        }
+
+        input {
+            font-size: 40px;
+        }
+
+        button {
+            font-size: 40px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"><input id="number" type="text"></td>
+    </tr>
+    <tr class="value">
+        <td>
+            <button onclick="buttonNumber('1')">1</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('2')">2</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('3')">3</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('+')">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="buttonNumber('4')">4</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('5')">5</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('6')">6</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="buttonNumber('7')">7</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('8')">8</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('9')">9</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('*')">*</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="reset('C')">C</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('0')">0</button>
+        </td>
+        <td>
+            <button onclick="result('=')">=</button>
+        </td>
+        <td>
+            <button onclick="buttonNumber('/')">/</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function buttonNumber(input) {
+        document.getElementById('number').value += input;
+    }
+
+    function result() {
+        let input = document.getElementById('number').value;
+        let result = eval(input);
+        document.getElementById('number').value = result;
+    }
+
+    function reset() {
+        document.getElementById('number').value = '';
+    }
+</script>
+</body>
+</html>
